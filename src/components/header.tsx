@@ -1,17 +1,9 @@
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
-import { MdOutlineDarkMode } from 'react-icons/md';
-import { FiSun } from 'react-icons/fi';
-import {
-  Flex,
-  IconButton,
-  Tag,
-  TagLabel,
-  useColorMode,
-} from '@chakra-ui/react';
+import { Settings } from './settings';
+import { Flex, IconButton, Tag, TagLabel } from '@chakra-ui/react';
 
 export const Header: React.FC = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Flex mt={8} alignItems='center' justifyContent='space-between'>
       <Flex alignItems='center'>
@@ -20,7 +12,12 @@ export const Header: React.FC = () => {
           alt='HeartBeat'
           className='w-9'
         />
-        <h2 className='text-2xl font-bold ml-2'>Artery</h2>
+        <Flex direction='column' ml={2}>
+          <h3 className='leading-none font-medium'>
+            Heart<span className='text-teal-400'>Beat</span>
+          </h3>
+          <h2 className='text-2xl font-bold leading-none'>Artery</h2>
+        </Flex>
         <Tag ml={2} borderRadius='full'>
           <TagLabel>1.0.0</TagLabel>
         </Tag>
@@ -33,18 +30,7 @@ export const Header: React.FC = () => {
             variant='ghost'
           />
         </a>
-        <IconButton
-          aria-label='Toggle theme'
-          icon={
-            colorMode === 'light' ? (
-              <MdOutlineDarkMode className='text-xl' />
-            ) : (
-              <FiSun className='text-xl' />
-            )
-          }
-          onClick={toggleColorMode}
-          variant='ghost'
-        />
+        <Settings />
       </Flex>
     </Flex>
   );
