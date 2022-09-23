@@ -1,6 +1,7 @@
 import React, { createContext, useState } from 'react';
 import { PatientRecord, SetState } from '../../utils/types';
 import { BioData } from './bioData';
+import { Examination } from './examination';
 import { MedicalBioData } from './medicalBioData';
 
 export interface RecordContextType {
@@ -17,6 +18,7 @@ export const RecordForm: React.FC = () => {
     <RecordContext.Provider value={{ patientRecord, setPatientRecord }}>
       <BioData />
       <MedicalBioData />
+      <Examination />
     </RecordContext.Provider>
   );
 };
