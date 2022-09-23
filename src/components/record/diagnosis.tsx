@@ -43,7 +43,7 @@ export const Diagnosis: React.FC<Props> = ({ diagnosis, setDiagnosis }) => {
                     colorScheme='red'
                     variant='ghost'
                     aria-label='Delete medicine'
-                    icon={<BiTrash size={18} strokeWidth={2} />}
+                    icon={<BiTrash size={20} />}
                     onClick={() => {
                       let tempDiagnosis = [...diagnosis];
                       tempDiagnosis.splice(idx, 1);
