@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import { Avatar, Flex, Heading, Text } from '@chakra-ui/react';
+import { Avatar, Flex, Text } from '@chakra-ui/react';
 
 export const WaterMark: React.FC = () => {
   const doctorName = localStorage.getItem('doctorName');
@@ -17,12 +17,14 @@ export const WaterMark: React.FC = () => {
         </Flex>
       ) : (
         <Flex alignItems='center'>
-          <Avatar src='https://raw.githubusercontent.com/octoi/heartbeat/main/website/assets/logo.svg' />
+          <Avatar
+            src='https://raw.githubusercontent.com/octoi/heartbeat/main/website/assets/logo.svg'
+            size='sm'
+          />
           <Flex ml={2} alignItems='center'>
-            <Heading className='text-2xl'>Heart</Heading>
-            <Heading className='text-2xl' color='teal.400'>
-              Beat
-            </Heading>
+            <h2 className='text-xl font-semibold'>
+              Heart<span className='text-teal-400'>Beat</span>
+            </h2>
           </Flex>
         </Flex>
       )}
