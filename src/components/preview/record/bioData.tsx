@@ -49,8 +49,10 @@ export const BioData: React.FC<Props> = ({
               )}
               {medicalBioData.height && (
                 <Td>
-                  {medicalBioData.height}
-                  {medicalBioData.heightUnit}
+                  {medicalBioData.height}{' '}
+                  {medicalBioData.heightUnit === 'Centimeter'
+                    ? 'CM'
+                    : medicalBioData.heightUnit?.toString()[0]}
                 </Td>
               )}
               {medicalBioData.weight && <Td>{medicalBioData.weight}Kg</Td>}
