@@ -1,5 +1,6 @@
 import React, { createContext, useState } from 'react';
 import { PatientRecord, SetState } from '../../utils/types';
+import { Advice } from './advice';
 import { BioData } from './bioData';
 import { Examination } from './examination';
 import { MedicalBioData } from './medicalBioData';
@@ -19,6 +20,7 @@ export const RecordForm: React.FC = () => {
       <BioData />
       <MedicalBioData />
       <Examination />
+      <Advice />
     </RecordContext.Provider>
   );
 };
